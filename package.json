@@ -1,0 +1,40 @@
+{
+  "name": "gpt-blog-template-generator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx ./ --fix",
+    "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json,css}\""
+  },
+  "dependencies": {
+    "@types/node": "18.15.3",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "^10.4.14",
+    "eslint-config-next": "13.2.4",
+    "next": "13.2.4",
+    "postcss": "^8.4.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.5",
+    "sass": "^1.59.3",
+    "tailwindcss": "^3.2.7",
+    "eslint-config-prettier": "^8.5.0",
+    "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4",
+    "eslint-plugin-tailwindcss": "^3.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.1"
+  }
+}
