@@ -1,0 +1,1 @@
+# gpt-blog-template-generator
