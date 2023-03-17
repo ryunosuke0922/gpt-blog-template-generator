@@ -1,11 +1,13 @@
 'use client';
 
 import type { NextPage } from 'next';
-import { useForm } from 'react-hook-form';
 import './globals.css';
 import TemplateForm from '../components/organisms/templateForm';
 import TemplateLog from '../components/organisms/templateLog';
-import { TemplateFormData } from '../domains/models/templateFormData';
+import {
+  TemplateFormData,
+  convertFormDataToText,
+} from '../domains/models/templateFormData';
 import { useState } from 'react';
 
 const Page: NextPage = () => {
@@ -13,16 +15,17 @@ const Page: NextPage = () => {
     blogTheme: '',
     targetAudience: '',
     blogStyle: '',
-    existingCategories: ['', '', ''],
-    popularArticles: ['', '', ''],
-    recentTitles: ['', '', ''],
-    desiredKeywords: ['', '', ''],
+    existingCategories: [],
+    popularArticles: [],
+    recentTitles: [],
+    desiredKeywords: [],
     tone: '',
+    additionalNotes: '',
   });
 
   const handleSubmit = async (data: TemplateFormData) => {
     setFormData(data);
-    const copiedData = JSON.stringify(data);
+    const copiedData = convertFormDataToText(data);
     try {
       await navigator.clipboard.writeText(copiedData);
       alert(`Submitted values: ${copiedData}\n\nCopied to clipboard!`);
