@@ -10,10 +10,14 @@ import { useState } from 'react';
 
 const Page: NextPage = () => {
   const [formData, setFormData] = useState<TemplateFormData>({
-    category: '',
-    theme: '',
-    tags: '',
-    persona: '',
+    blogTheme: '',
+    targetAudience: '',
+    blogStyle: '',
+    existingCategories: ['', '', ''],
+    popularArticles: ['', '', ''],
+    recentTitles: ['', '', ''],
+    desiredKeywords: ['', '', ''],
+    tone: '',
   });
 
   const handleSubmit = async (data: TemplateFormData) => {

@@ -31,8 +31,41 @@ export const TONES = [
 ];
 
 export const BLOG_STYLES = [
-  'フォーマル',
-  'インフォーマル',
   '教育的',
   'エンターテイメント',
+  'ビジネス',
+  'ニュース',
+  'ショッピング',
+  '個人的',
+];
+
+export const testData: TemplateFormData[] = [
+  {
+    blogTheme: 'レトロゲーム',
+    targetAudience: 'ゲーム愛好家',
+    blogStyle: 'エンターテイメント',
+    existingCategories: ['アーケード', 'コンソール', '名作'],
+    popularArticles: [
+      '80年代のアーケードゲームベスト10',
+      '懐かしのファミコン名作ゲーム',
+      'セガサターンの伝説的なゲーム',
+    ],
+    recentTitles: ['スーパーマリオの進化', 'メタルギアシリーズの秘密'],
+    desiredKeywords: ['ファミコン', 'メガドライブ', 'ゲームボーイ'],
+    tone: 'フレンドリー',
+  },
+  {
+    blogTheme: '初心者向けプログラミング',
+    targetAudience: 'プログラミング初心者',
+    blogStyle: '教育的',
+    existingCategories: ['Python', 'JavaScript', 'HTML/CSS'],
+    popularArticles: [
+      'Pythonで簡単なウェブアプリを作ってみよう',
+      'JavaScript初心者向けチュートリアル',
+      'HTML/CSSでオリジナルサイトを作ろう',
+    ],
+    recentTitles: ['Python入門', 'Reactでウェブアプリを作る'],
+    desiredKeywords: ['プログラミング', '初心者', 'チュートリアル'],
+    tone: '教育的',
+  },
 ];
