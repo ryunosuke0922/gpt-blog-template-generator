@@ -10,7 +10,10 @@ const Footer = (): JSX.Element => {
         >
           プライバシーポリシー
         </a>
-        <FiTwitter className="h-6 w-6 cursor-pointer text-blue-500 hover:text-blue-400" />
+        <div className="flex items-center">
+          <FiTwitter className="h-6 w-6 cursor-pointer text-blue-500 hover:text-blue-400" />
+          <span className="ml-2 text-sm">作者: ryunosuke092_</span>
+        </div>
       </div>
     </footer>
   );

@@ -1,38 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# gpt-blog-template-generator
 
-## Getting Started
+## 概要
 
-First, run the development server:
+このプロジェクトは、ブログ記事のアイデアを Chat GPT に聞く際に使うテンプレートを作成するツールです。ブログの設定などを入力し、テンプレートを作成することができます。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+[こちらのリンク](https://github.com/example/gpt-blog-template-generator)
+
+## Next プロジェクトの立ち上げ方
+
+このプロジェクトは、Next.js を使用して作成されています。プロジェクトのセットアップには、Node.js と yarn のインストールが必要です。
+
+以下の手順に従って、プロジェクトをセットアップしてください。
+
+1. このリポジトリをクローンします。
+
+```
+git clone https://github.com/example/gpt-blog-template-generator.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. クローンしたリポジトリのディレクトリに移動します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd gpt-blog-template-generator
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. 依存関係をインストールします。
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+yarn
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. 開発サーバーを起動します。
 
-## Learn More
+```
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+ブラウザで http://localhost:3000 を開きます。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ライセンス
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MIT License
