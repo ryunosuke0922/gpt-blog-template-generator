@@ -5,7 +5,9 @@ type InputLabelProps = {
 };
 
 const InputLabel: React.FC<InputLabelProps> = ({ text }) => {
-  return <label className="mb-2 block text-gray-700">{text}</label>;
+  return (
+    <label className="block text-sm font-medium text-gray-400">{text}</label>
+  );
 };
 
 export default InputLabel;

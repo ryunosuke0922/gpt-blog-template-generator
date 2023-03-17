@@ -10,7 +10,7 @@ import {
 } from '../domains/models/templateFormData';
 import { useState } from 'react';
 
-const Page: NextPage = () => {
+const Page: React.FC = () => {
   const [formData, setFormData] = useState<TemplateFormData>({
     blogTheme: '',
     targetAudience: '',
@@ -28,9 +28,9 @@ const Page: NextPage = () => {
     const copiedData = convertFormDataToText(data);
     try {
       await navigator.clipboard.writeText(copiedData);
-      alert(`Submitted values: ${copiedData}\n\nCopied to clipboard!`);
+      alert(`テンプレートがクリップボードにコピーされました！`);
     } catch (err) {
-      alert(`Submitted values: ${copiedData}\n\nFailed to copy to clipboard.`);
+      alert(`テンプレートがクリップボードへのコピーに失敗しました。`);
     }
   };
 
@@ -39,13 +39,13 @@ const Page: NextPage = () => {
   };
 
   return (
-    <div className="flex bg-gray-100 py-6 sm:py-12">
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="flex bg-white px-4 py-10 shadow-lg sm:rounded-3xl sm:p-20">
+    <div className="min-h-screen bg-black text-gray-100">
+      <div className="mx-auto max-w-5xl">
+        <div className="flex flex-col rounded-3xl p-8 shadow-lg sm:flex-row sm:p-10 md:p-16 lg:p-20">
           <div className="flex-1">
             <TemplateForm onSubmit={handleSubmit} onChange={handleChange} />
           </div>
-          <div className="flex-1">
+          <div className="mt-8 flex-1 sm:mt-0 sm:ml-10">
             <TemplateLog formData={formData} />
           </div>
         </div>

@@ -1,3 +1,6 @@
+import Header from '../components/organisms/header';
+import Footer from '../components/organisms/footer';
+
 export default function RootLayout({
   children,
 }: {
@@ -7,8 +10,9 @@ export default function RootLayout({
     <html lang="ja">
       <head />
       <body>
-        <h1>ヘッダー</h1>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

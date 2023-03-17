@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   TemplateFormData,
-  TONES,
   testData,
 } from '../../../domains/models/templateFormData';
 import InputLabel from '../../atoms/inputLabel';
@@ -101,7 +100,7 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
     setValue('blogTheme', '');
     setValue('targetAudience', '');
     setValue('blogStyle', '');
-    setValue('tone', TONES[0]);
+    setValue('tone', '');
     setValue('additionalNotes', '');
 
     setExistingCategoriesCount(1);
@@ -127,21 +126,28 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
 
   return (
     <>
-      <button
-        type="button"
-        className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-white"
-        onClick={handleAddSample}
+      <div className="flex items-center justify-between bg-black py-4 px-6">
+        <div className="flex items-center space-x-4">
+          <button
+            type="button"
+            className="rounded-full bg-gray-300 py-2 px-4 text-black transition-colors duration-300 hover:bg-gray-400"
+            onClick={handleAddSample}
+          >
+            サンプルを追加
+          </button>
+          <button
+            type="button"
+            className="rounded-full bg-red-500 py-2 px-4 text-white shadow-md transition-colors duration-300 hover:bg-red-600"
+            onClick={handleClear}
+          >
+            クリア
+          </button>
+        </div>
+      </div>
+      <form
+        className="mt-8 rounded-lg bg-gray-900 p-8 shadow-md"
+        onSubmit={handleSubmit(onSubmit)}
       >
-        サンプルを追加
-      </button>
-      <button
-        className="mt-4 w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-red-600 to-red-500 px-8 py-3 text-base font-medium text-white hover:from-red-700 md:py-4 md:px-10 md:text-lg"
-        type="button"
-        onClick={handleClear}
-      >
-        クリア
-      </button>
-      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6">
           <InputLabel text="ブログのテーマ" />
           <FormInput
@@ -178,7 +184,7 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
           ))}
           <button
             type="button"
-            className="mt-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-500 px-4 py-2 text-white hover:from-blue-600 hover:to-indigo-600"
+            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
             onClick={addExistingCategory}
           >
             カテゴリーを追加
@@ -196,7 +202,7 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
           ))}
           <button
             type="button"
-            className="mt-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-500 px-4 py-2 text-white hover:from-blue-600 hover:to-indigo-600"
+            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
             onClick={addPopularArticle}
           >
             人気の記事を追加
@@ -214,7 +220,7 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
           ))}
           <button
             type="button"
-            className="mt-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-500 px-4 py-2 text-white hover:from-blue-600 hover:to-indigo-600"
+            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
             onClick={addRecentTitle}
           >
             最近の記事タイトルを追加
@@ -232,7 +238,7 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
           ))}
           <button
             type="button"
-            className="mt-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-500 px-4 py-2 text-white hover:from-blue-600 hover:to-indigo-600"
+            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
             onClick={addDesiredKeyword}
           >
             使用したいキーワードを追加
@@ -256,8 +262,8 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
           />
         </div>
         <button
-          className="to-light-blue-500 hover:to-light-blue-600 flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-cyan-600 px-8 py-3 text-base font-medium text-white hover:from-cyan-700 md:py-4 md:px-10 md:text-lg"
           type="submit"
+          className="bg-light-blue-500 hover:bg-light-blue-600 rounded-md py-3 px-6 font-medium text-white shadow-md transition-colors duration-300"
         >
           テンプレートをコピー
         </button>

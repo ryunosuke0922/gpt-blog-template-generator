@@ -59,3 +59,7 @@ img {
     background: #333;
   }
 }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}

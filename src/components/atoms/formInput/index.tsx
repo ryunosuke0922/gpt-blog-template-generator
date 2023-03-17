@@ -16,7 +16,7 @@ const FormInput: React.FC<FormInputProps> = ({
 }) => {
   return (
     <input
-      className="focus:border-light-blue-500 focus:ring-light-blue-500 w-full rounded-md border-gray-300 text-gray-900 placeholder-gray-500 shadow-sm focus:ring-1"
+      className="mt-2 w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-700 placeholder-gray-400 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-400"
       type="text"
       placeholder={placeholder}
       {...register(name, validation)}
