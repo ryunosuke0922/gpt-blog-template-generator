@@ -1,11 +1,7 @@
 import Head from 'next/head';
-import ReactGA from 'react-ga';
 
 // TODO: Google AnalyticsのトラッキングIDを設定してください。
 export default function PageHead() {
-  // Google Analyticsの初期化
-  ReactGA.initialize('');
-
   const pageTitle =
     'Chat GPTにブログ案を出してもらうテンプレート作成ツール | gpt-blog-template-generator ';
   const pageDescription =

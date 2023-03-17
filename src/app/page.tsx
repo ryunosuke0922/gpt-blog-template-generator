@@ -35,7 +35,10 @@ const Page: React.FC = () => {
   };
 
   const handleChange = (data: TemplateFormData) => {
-    setFormData(data);
+    // only set the form data if it's different from the current value
+    if (JSON.stringify(data) !== JSON.stringify(formData)) {
+      setFormData(data);
+    }
   };
 
   return (
