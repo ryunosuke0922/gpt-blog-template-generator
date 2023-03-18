@@ -4,7 +4,7 @@
 
 このプロジェクトは、ブログ記事のアイデアを Chat GPT に聞く際に使うテンプレートを作成するツールです。ブログの設定などを入力し、テンプレートを作成することができます。
 
-[こちらのリンク](https://github.com/example/gpt-blog-template-generator)
+[こちらのリンク](https://gpt-blog-template-generator.vercel.app/)
 
 ## Next プロジェクトの立ち上げ方
 
