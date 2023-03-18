@@ -42,13 +42,13 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-gray-100">
-      <div className="mx-auto max-w-5xl">
-        <div className="flex flex-col rounded-3xl p-8 shadow-lg sm:flex-row sm:p-10 md:p-16 lg:p-20">
+    <div className="min-h-screen text-slate-100">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-8 p-8 sm:flex-row sm:p-8 md:p-12 lg:p-16">
           <div className="flex-1">
             <TemplateForm onSubmit={handleSubmit} onChange={handleChange} />
           </div>
-          <div className="mt-8 flex-1 sm:mt-0 sm:ml-10">
+          <div className="flex-1">
             <TemplateLog formData={formData} />
           </div>
         </div>

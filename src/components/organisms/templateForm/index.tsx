@@ -126,148 +126,163 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
 
   return (
     <>
-      <div className="flex items-center justify-between bg-black py-4 px-6">
-        <div className="flex items-center space-x-4">
-          <button
-            type="button"
-            className="rounded-full bg-gray-300 py-2 px-4 text-black transition-colors duration-300 hover:bg-gray-400"
-            onClick={handleAddSample}
-          >
-            サンプルを追加
-          </button>
-          <button
-            type="button"
-            className="rounded-full bg-red-500 py-2 px-4 text-white shadow-md transition-colors duration-300 hover:bg-red-600"
-            onClick={handleClear}
-          >
-            クリア
-          </button>
+      <div className="rounded-xl bg-gray-800 shadow-lg transition-shadow">
+        <div className="flex items-center justify-start px-8 pt-6 pb-2">
+          <div>
+            <p className="mb-4 text-base font-bold text-slate-50">
+              サンプルを入力可能です
+            </p>
+            <div className="flex items-center gap-8">
+              <button
+                type="button"
+                className="custom-button px-4 py-2 font-bold text-teal-400 focus:outline-none"
+                onClick={handleAddSample}
+              >
+                追加
+              </button>
+              <button
+                type="button"
+                className="custom-button px-4 py-2 font-bold text-red-400 focus:outline-none"
+                onClick={handleClear}
+              >
+                削除
+              </button>
+            </div>
+          </div>
         </div>
+        <form className="mt-4 p-8 shadow-md" onSubmit={handleSubmit(onSubmit)}>
+          <p className="mb-6 text-base font-bold text-slate-50">
+            ブログ情報を入力してください
+          </p>
+          <div className="mb-6">
+            <InputLabel text="ブログのテーマ" />
+            <FormInput
+              name="blogTheme"
+              placeholder="例: レトロゲームの名作と魅力的なゲーム"
+              register={register}
+            />
+          </div>
+          <div className="mb-6">
+            <InputLabel text="ブログのターゲット" />
+            <FormInput
+              name="targetAudience"
+              placeholder="例: レトロゲーム愛好家、ファミコンやスーパーファミコンが好きな人"
+              register={register}
+            />
+          </div>
+          <div className="mb-6">
+            <InputLabel text="ブログのスタイル" />
+            <FormInput
+              name="blogStyle"
+              placeholder="例: 紹介記事"
+              register={register}
+            />
+          </div>
+          <div className="mb-2">
+            <InputLabel text="ブログのカテゴリー" />
+            {Array.from({ length: existingCategoriesCount }, (_, index) => (
+              <FormInput
+                key={index}
+                name={`existingCategories[${index}]`}
+                placeholder={`例: アーケードゲーム、ファミコン、ゲームボーイ`}
+                register={register}
+              />
+            ))}
+            <div className="mt-2 flex justify-end px-2">
+              <button
+                type="button"
+                className="custom-plus-button px-2 pt-2 pb-1 text-sm font-bold text-teal-200"
+                onClick={addExistingCategory}
+              >
+                ＋
+              </button>
+            </div>
+          </div>
+          <div className="mb-2">
+            <InputLabel text="人気の記事" />
+            {Array.from({ length: popularArticlesCount }, (_, index) => (
+              <FormInput
+                key={index}
+                name={`popularArticles[${index}]`}
+                placeholder="例: スーパーマリオの魅力、ドラクエシリーズの魅力"
+                register={register}
+              />
+            ))}
+            <div className="mt-2 flex justify-end px-2">
+              <button
+                type="button"
+                className="custom-plus-button px-2 pt-2 pb-1 text-sm font-bold text-teal-200"
+                onClick={addPopularArticle}
+              >
+                ＋
+              </button>
+            </div>
+          </div>
+          <div className="mb-2">
+            <InputLabel text="最近の記事" />
+            {Array.from({ length: recentTitlesCount }, (_, index) => (
+              <FormInput
+                key={index}
+                name={`recentTitles[${index}]`}
+                placeholder="例: レトロゲームの名作とその魅力、スーパーマリオの進化と変遷"
+                register={register}
+              />
+            ))}
+            <div className="mt-2 flex justify-end px-2">
+              <button
+                type="button"
+                className="custom-plus-button px-2 pt-2 pb-1 text-sm font-bold text-teal-200"
+                onClick={addRecentTitle}
+              >
+                ＋
+              </button>
+            </div>
+          </div>
+          <div className="mb-2">
+            <InputLabel text="使用したいキーワード" />
+            {Array.from({ length: desiredKeywordsCount }, (_, index) => (
+              <FormInput
+                key={index}
+                name={`desiredKeywords[${index}]`}
+                placeholder="例: ゲーム, レトロゲーム, ファミコン"
+                register={register}
+              />
+            ))}
+            <div className="mt-2 flex justify-end px-2">
+              <button
+                type="button"
+                className="custom-plus-button px-2 pt-2 pb-1 text-sm font-bold text-teal-200"
+                onClick={addDesiredKeyword}
+              >
+                ＋
+              </button>
+            </div>
+          </div>
+          <div className="mb-6">
+            <InputLabel text="ブログのトーン" />
+            <FormInput
+              name="tone"
+              placeholder="例: 記事では、丁寧でわかりやすい説明を心掛けてください。"
+              register={register}
+            />
+          </div>
+          <div className="mb-6">
+            <InputLabel text="その他の要求事項" />
+            <textarea
+              placeholder="その他の要求事項を記入してください"
+              rows={4}
+              className="custom-textarea my-1 w-full px-6 py-4 text-sm text-slate-50 placeholder-slate-400 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              {...register('additionalNotes')}
+            />
+          </div>
+          <button
+            type="submit"
+            className="custom-button px-4 py-2 font-bold text-teal-400 focus:outline-none"
+          >
+            テンプレートをコピー
+          </button>
+        </form>
       </div>
-      <form
-        className="mt-8 rounded-lg bg-gray-900 p-8 shadow-md"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <div className="mb-6">
-          <InputLabel text="ブログのテーマ" />
-          <FormInput
-            name="blogTheme"
-            placeholder="例: レトロゲームの名作と魅力的なゲーム"
-            register={register}
-          />
-        </div>
-        <div className="mb-6">
-          <InputLabel text="ブログのターゲット" />
-          <FormInput
-            name="targetAudience"
-            placeholder="例: レトロゲーム愛好家、ファミコンやスーパーファミコンが好きな人"
-            register={register}
-          />
-        </div>
-        <div className="mb-6">
-          <InputLabel text="ブログのスタイル" />
-          <FormInput
-            name="blogStyle"
-            placeholder="例: 紹介記事"
-            register={register}
-          />
-        </div>
-        <div className="mb-6">
-          <InputLabel text="ブログのカテゴリー" />
-          {Array.from({ length: existingCategoriesCount }, (_, index) => (
-            <FormInput
-              key={index}
-              name={`existingCategories[${index}]`}
-              placeholder={`例: アーケードゲーム、ファミコン、ゲームボーイ`}
-              register={register}
-            />
-          ))}
-          <button
-            type="button"
-            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
-            onClick={addExistingCategory}
-          >
-            カテゴリーを追加
-          </button>
-        </div>
-        <div className="mb-6">
-          <InputLabel text="人気の記事" />
-          {Array.from({ length: popularArticlesCount }, (_, index) => (
-            <FormInput
-              key={index}
-              name={`popularArticles[${index}]`}
-              placeholder="例: スーパーマリオの魅力、ドラクエシリーズの魅力"
-              register={register}
-            />
-          ))}
-          <button
-            type="button"
-            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
-            onClick={addPopularArticle}
-          >
-            人気の記事を追加
-          </button>
-        </div>
-        <div className="mb-6">
-          <InputLabel text="最近の記事" />
-          {Array.from({ length: recentTitlesCount }, (_, index) => (
-            <FormInput
-              key={index}
-              name={`recentTitles[${index}]`}
-              placeholder="例: レトロゲームの名作とその魅力、スーパーマリオの進化と変遷"
-              register={register}
-            />
-          ))}
-          <button
-            type="button"
-            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
-            onClick={addRecentTitle}
-          >
-            最近の記事タイトルを追加
-          </button>
-        </div>
-        <div className="mb-6">
-          <InputLabel text="使用したいキーワード" />
-          {Array.from({ length: desiredKeywordsCount }, (_, index) => (
-            <FormInput
-              key={index}
-              name={`desiredKeywords[${index}]`}
-              placeholder="例: ゲーム, レトロゲーム, ファミコン"
-              register={register}
-            />
-          ))}
-          <button
-            type="button"
-            className="mt-2 rounded-md border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:border-blue-800 hover:bg-blue-600"
-            onClick={addDesiredKeyword}
-          >
-            使用したいキーワードを追加
-          </button>
-        </div>
-        <div className="mb-6">
-          <InputLabel text="ブログのトーン" />
-          <FormInput
-            name="tone"
-            placeholder="例: 記事では、丁寧でわかりやすい説明を心掛けてください。"
-            register={register}
-          />
-        </div>
-        <div className="mb-6">
-          <InputLabel text="その他の要求事項" />
-          <textarea
-            placeholder="その他の要求事項を記入してください"
-            rows={4}
-            className="w-full rounded-md border border-gray-700 bg-gray-800 p-2 text-base text-white focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-            {...register('additionalNotes')}
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-light-blue-500 hover:bg-light-blue-600 rounded-md py-3 px-6 font-medium text-white shadow-md transition-colors duration-300"
-        >
-          テンプレートをコピー
-        </button>
-      </form>
     </>
   );
 };

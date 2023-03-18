@@ -6,11 +6,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+  font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
     Meiryo, sans-serif;
 
   color: #333;
-  background: #fff;
+  background: #243441;
 
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -48,7 +48,7 @@ picture,
 img {
   display: block;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -58,8 +58,61 @@ img {
     color: #fff;
     background: #333;
   }
-}
+} */
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* カスタム */
+.custom-button {
+  background: transparent;
+  position: relative;
+  border-radius: 50rem;
+  overflow: hidden;
+  box-shadow: 4px 4px 8px #10151c, -4px -4px 8px #2f3f53;
+}
+.custom-button:hover {
+  box-shadow: 2px 2px 6px #10151c, -2px -2px 6px #2f3f53;
+}
+
+.custom-input {
+  background: transparent;
+  position: relative;
+  border-radius: 50rem;
+  border: 1px solid #2f3f53;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 6px #0f151b, inset -2px -2px 6px #2f3f53;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.custom-input:focus {
+  box-shadow: inset 9px 9px 14px #0f151b, inset -9px -9px 14px #2f3f53;
+}
+
+.custom-textarea {
+  background: transparent;
+  position: relative;
+  border-radius: 0.8rem;
+  border: 1px solid #2f3f53;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 6px #0f151b, inset -2px -2px 6px #2f3f53;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.custom-textarea:focus {
+  box-shadow: inset 9px 9px 14px #0f151b, inset -9px -9px 14px #2f3f53;
+}
+
+.custom-plus-button {
+  background: #243441;
+  position: relative;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 4px 4px 8px #10151c, -4px -4px 8px #2f3f53;
+  transition: all 0.3s ease-in-out;
+}
+.custom-plus-button:hover {
+  box-shadow: 2px 2px 6px #10151c, -2px -2px 6px #2f3f53;
+}
+.custom-plus-button:focus {
+  outline: none;
 }
