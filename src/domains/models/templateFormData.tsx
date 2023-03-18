@@ -50,7 +50,7 @@ export function convertFormDataToText(formData: TemplateFormData) {
 これらの条件をもとに、ブログのタイトル、構成を考えてください。
 最高の結果を出力してください。
 
-# 既存のブログの設定
+# 出力するブログ記事の設定
 
 ## ブログのテーマ
   - ${formData.blogTheme}

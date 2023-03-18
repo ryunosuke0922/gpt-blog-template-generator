@@ -155,7 +155,7 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
             ブログ情報を入力してください
           </p>
           <div className="mb-6">
-            <InputLabel text="ブログのテーマ" />
+            <InputLabel text="既存ブログのテーマ" />
             <FormInput
               name="blogTheme"
               placeholder="例: レトロゲームの名作と魅力的なゲーム"
@@ -199,7 +199,10 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
             </div>
           </div>
           <div className="mb-2">
-            <InputLabel text="人気の記事" />
+            <InputLabel
+              text="人気の記事"
+              subtext="参考に似た記事を生成します"
+            />
             {Array.from({ length: popularArticlesCount }, (_, index) => (
               <FormInput
                 key={index}
@@ -219,7 +222,10 @@ const TemplateForm: React.FC<TemplateFormProps> = ({ onSubmit, onChange }) => {
             </div>
           </div>
           <div className="mb-2">
-            <InputLabel text="最近の記事" />
+            <InputLabel
+              text="最近の記事"
+              subtext="最近の記事と似た記事は除外します"
+            />
             {Array.from({ length: recentTitlesCount }, (_, index) => (
               <FormInput
                 key={index}
