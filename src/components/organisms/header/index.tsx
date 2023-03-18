@@ -1,12 +1,12 @@
 const Header = (): JSX.Element => {
   return (
-    <header className="bg-black text-gray-200">
+    <header className="bg-transparent text-gray-200">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="/">
           <div className="flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-blue-400"
+              className="h-6 w-6 text-teal-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -17,12 +17,12 @@ const Header = (): JSX.Element => {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="text-lg font-bold">
+            <span className="text-base font-bold text-slate-50">
               gpt-blog-template-generator
             </span>
           </div>
         </a>
-        <p className="text-sm text-blue-400">
+        <p className="text-sm text-teal-400">
           Chat GPTに「ブログ案を出してもらうテンプレート」作成ツール
         </p>
       </div>
