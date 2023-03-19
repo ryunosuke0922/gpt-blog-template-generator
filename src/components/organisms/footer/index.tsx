@@ -1,4 +1,4 @@
-import { FiTwitter } from 'react-icons/fi';
+import { FiTwitter, FiGithub } from 'react-icons/fi';
 
 const Footer = (): JSX.Element => {
   return (
@@ -15,6 +15,15 @@ const Footer = (): JSX.Element => {
         >
           <FiTwitter className="h-4 w-4 cursor-pointer text-blue-500 hover:text-blue-400" />
           <span className="ml-1">作者</span>
+        </a>
+        <a
+          href="https://github.com/ryunosuke0922/gpt-blog-template-generator"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center"
+        >
+          <FiGithub className="h-4 w-4 cursor-pointer text-gray-500 hover:text-gray-400" />
+          <span className="ml-1">Repository</span>
         </a>
       </div>
     </footer>
