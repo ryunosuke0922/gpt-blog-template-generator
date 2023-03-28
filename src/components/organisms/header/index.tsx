@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Header = (): JSX.Element => {
   return (
     <header className="bg-transparent text-gray-200">

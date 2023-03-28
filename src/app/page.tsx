@@ -1,6 +1,6 @@
 'use client';
 
-import type { NextPage } from 'next';
+import React, { useState } from 'react';
 import './globals.css';
 import TemplateForm from '../components/organisms/templateForm';
 import TemplateLog from '../components/organisms/templateLog';
@@ -8,7 +8,6 @@ import {
   TemplateFormData,
   convertFormDataToText,
 } from '../domains/models/templateFormData';
-import { useState } from 'react';
 
 const Page: React.FC = () => {
   const [formData, setFormData] = useState<TemplateFormData>({

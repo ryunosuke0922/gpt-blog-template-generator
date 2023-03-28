@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from '../components/organisms/header';
 import Footer from '../components/organisms/footer';
 import Script from 'next/script';

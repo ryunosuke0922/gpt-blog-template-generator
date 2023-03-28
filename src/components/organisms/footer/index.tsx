@@ -1,3 +1,4 @@
+import React from 'react';
 import { FiTwitter, FiGithub } from 'react-icons/fi';
 
 const Footer = (): JSX.Element => {
